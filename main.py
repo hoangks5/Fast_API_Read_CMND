@@ -21,14 +21,13 @@ async def create_file(file: bytes = File()):
 
     
     data = {
-        'so_cmnd' : response['data'][0]['id'],
-        'ho_ten' : response['data'][0]['name'],
-        'sinh_nhat' : response['data'][0]['dob'],
-        'gioi_tinh' : response['data'][0]['sex'],
-        'dan_toc' : response['data'][0]['ethnicity'],
-        'que_quan' : response['data'][0]['home'],
-        'thuong_tru' : response['data'][0]['address'],
-        'han_su_dung' : response['data'][0]['doe']
+        'code' : response['data'][0]['id'],
+        'fullname' : response['data'][0]['name'],
+        'birthday' : response['data'][0]['dob'],
+        'gender' : response['data'][0]['sex'],
+        'nation' : response['data'][0]['ethnicity'],
+        'location' : response['data'][0]['home'],
+        'address' : response['data'][0]['address']
     }
     return data
 
