@@ -18,13 +18,23 @@ async def create_file(file: bytes = File()):
     }
     response = requests.post(url, files=files, headers=headers).json()
 
-    
-    data = {
+    try:
+        data = {
+            'code' : response['data'][0]['id'],
+            'fullname' : response['data'][0]['name'],
+            'birthday' : response['data'][0]['dob'],
+            'gender' : response['data'][0]['sex'],
+            'nation' : response['data'][0]['ethnicity'],
+            'location' : response['data'][0]['home'],
+            'address' : response['data'][0]['address']
+        }
+    except:
+        data = {
         'code' : response['data'][0]['id'],
         'fullname' : response['data'][0]['name'],
         'birthday' : response['data'][0]['dob'],
         'gender' : response['data'][0]['sex'],
-        'nation' : response['data'][0]['ethnicity'],
+        'nation' : ' ',
         'location' : response['data'][0]['home'],
         'address' : response['data'][0]['address']
     }
