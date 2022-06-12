@@ -14,7 +14,7 @@ async def create_file(file: bytes = File()):
     url = 'https://api.fpt.ai/vision/idr/vnm'
     files = {'image': file}
     headers = {
-        'api-key': 'krhqw0LvJpuS0hRtYYlW1yy8yZjdMaps'
+        'api-key': '2YBROm3NcIm0KFG5YBNPX9WuCrP5RWiu'
     }
     response = requests.post(url, files=files, headers=headers).json()
 
